@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Flask Webpage</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Hello, Flask!</h1>
+    <p>This is a basic Flask webpage.</p>
+    <h1>List of Items</h1>
+
+    <form method="POST" action="{{ url_for('generate_story') }}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="job_title">Future Job Title:</label>
+        <input type="text" id="job_title" name="job_title" required><br>
+
+        <input type="submit" value="Generate Story">
+    </form>
+
+</body>
+</html>

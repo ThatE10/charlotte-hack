@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Page</title>
+</head>
+<body>
+    <h1>Search Page</h1>
+    <form method="GET" action="{{ url_for('search_results') }}">
+        <input type="text" name="query" placeholder="Enter your search query" required>
+        <button type="submit">Search</button>
+    </form>
+    {% if results %}
+    <div id="results">
+        <h2>Search Results</h2>
+        <ul>
+            {% for result in results %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
